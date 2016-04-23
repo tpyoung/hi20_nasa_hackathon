@@ -406,7 +406,7 @@
 
   MOCK_DATA.features[0].geometry.coordinates
   .map(function(x){
-    return L.marker([x[1],x[0]]).addTo(map);
+    return L.marker([x[1],x[0]], { title: 'LAT: ' + x[1] + ' LNG: ' + x[0], opacity: 0.5 }).bindPopup('LAT: ' + x[1] + ' LNG: ' + x[0]).addTo(map);
   });
 
 }(window, document, L));
