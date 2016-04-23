@@ -20,6 +20,6 @@
 	}).addTo(map);
 
 
-	L.marker([52.5, 13.4]).addTo(map);
+	L.marker([21.3067, -157.8670]).addTo(map);
 
 }(window, document, L));
