@@ -1,5 +1,4 @@
 var water_level_data = require('./water_level_data.json');
-
 var yearArray = [];
 var mappedData = water_level_data.data.map(function(monthData){
   if (yearArray.indexOf(monthData.year) === -1){
@@ -8,23 +7,23 @@ var mappedData = water_level_data.data.map(function(monthData){
   return {
     "year" : monthData.year,
     "month" : monthData.month,
-    "seaLevel" : monthData.MSL
+    "seaLevel" : Number(monthData.MSL)
   }
 });
 
-var dataArray = [];
-for (var i = 0; i < yearArray.length; i++){
-  var yearObj = {};
-  var mean = null;
-  while (mappedData.year === i){
-    mean += mappedData.MSL;
+mappedData.map(function(data){
+  var meanArr = [];
+  var mean = 0;
+  for (var i = 0; i < yearArray.length; i++){
+    if (data.year === yearArray[i]){
+      mean += data.seaLevel;
+    }
+    else {
+      meanArr.push({
+        x : yearArray[i],
+        y : meanArr
+      });
+    }
   }
-  yearObj = {
-    "year" : yearArray[i],
-    "meanSeaLevel" : mean
-  }
-  dataArray.push(yearObj);
-};
-console.log(dataArray);
-
-
+  return meanArr;
+});
