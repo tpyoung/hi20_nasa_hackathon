@@ -404,13 +404,9 @@
     attribution: 'Map data © <a href="http://www.openstreetmap.org">OpenStreetMap contributors</a>'
   }).addTo(map);
 
-
   MOCK_DATA.features[0].geometry.coordinates
   .map(function(x){
-    var new_arr = [x[1],x[0]];
-    L.marker(new_arr).addTo(map);
-    return;
+    return L.marker([x[1],x[0]]).addTo(map);
   });
-	L.marker([21.3067, -157.8670]).addTo(map);
 
 }(window, document, L));
