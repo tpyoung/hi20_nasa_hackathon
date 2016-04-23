@@ -1,13 +1,13 @@
-d3.json("./data/sea_levels.json", function(error, sea_levels){
+d3.json("./data/water_level_formatted.json", function(error, lineData){
   if (error) throw error;
 
-  var lineData = sea_levels.data.reduce(function(prev, curr) {
-    prev.push( {
-      x: curr.year,
-      y: curr.MSL
-    });
-    return prev;
-  }, []);
+  // var lineData = sea_levels.data.reduce(function(prev, curr) {
+  //   prev.push( {
+  //     x: curr.year,
+  //     y: curr.MSL
+  //   });
+  //   return prev;
+  // }, []);
 
   var vis = d3.select('#visualisation'),
       WIDTH = 500,
@@ -43,5 +43,5 @@ d3.json("./data/sea_levels.json", function(error, sea_levels){
     .attr('d', lineFunc(lineData))
     .attr('stroke', 'blue')
     .attr('stroke-width', 1)
-    .attr('fill', 'none')
+    .attr('fill', 'blue')
 });
