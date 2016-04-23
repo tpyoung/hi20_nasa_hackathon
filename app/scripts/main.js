@@ -394,8 +394,8 @@
 
 	/* create leaflet map */
 	var map = L.map('map', {
-		center: [21.3067, -157.8670],
-		zoom: 4
+		center: [21.5067, -157.8670],
+		zoom: 11
 	});
   /* add default stamen tile layer */
   new L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
