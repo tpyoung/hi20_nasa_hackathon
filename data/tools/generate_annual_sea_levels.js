@@ -2,6 +2,7 @@
 //   `node generate_annual_sea_levels.js`
 (function() {
   var fs = require('fs');
+  var minMax = require('./../landingPageMap/minMaxData.json');
 
   var mockData = {
     "type": "FeatureCollection",
@@ -431,6 +432,9 @@
   }
 
   var formattedPoints = coords.map(function(point) {
+
+    
+
     return {
       lat: point[1],
       lon: point[0]//,

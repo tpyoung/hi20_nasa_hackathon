@@ -11,7 +11,7 @@ const mappedData = rawData.filter((yearMonthData) => {
     "max" : +yearMonthData.MHW
   }
 });
-// console.log(mappedData);
+
 let minMaxArr = [];
 let year = 1950;
 while (minMaxArr.length <= 59){
@@ -41,5 +41,3 @@ for (var i = 0; i < mappedData.length; i++){
     }
   }
 }
-    console.log('minMaxArr',minMaxArr);
-
