@@ -8,13 +8,13 @@
 	<title>HI2O</title>
 	<meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    
+
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="lib/styles/leaflet.css">
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
-   
+
    	<!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -22,13 +22,13 @@
 
 </head>
 <body>
-	
+
 		<header class="group">
-			<div class="appName">
-				HI2O
-			</div>
+			<h1 class="appName">
+				HI<span id="numbertwo">2</span>O
+			</h1>
 		</header>
-	
+
 	<div class="map-application">
 		<div id="map" class="map"></div>
 	</div>
@@ -36,10 +36,10 @@
 	<script src="lib/scripts/leaflet.js"></script>
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
-	
+
 	<script src="bower_components/topojson/topojson.js"></script>
 	<script>
-		// Copyright (c) 2013 Ryan Clark, https://gist.github.com/rclark/5779673 
+		// Copyright (c) 2013 Ryan Clark, https://gist.github.com/rclark/5779673
 		L.TopoJSON = L.GeoJSON.extend({
 			addData: function(jsonData){
 				if(jsonData.type === "Topology") {
@@ -55,7 +55,7 @@
 	</script>
 	<!-- endbower -->
   <!-- endbuild -->
-	
+
 	<!-- build:js scripts/main.js -->
 	<script src="scripts/main.js"></script>
 	<!-- endbuild -->

@@ -1,0 +1,64 @@
+$background: #3b3a36;
+$headers: #e9ece5;
+
+body{
+  background-color: $background;
+}
+
+header{
+  top: 0;
+  left: 0;
+  height: 150px;
+  padding: 15px;
+  z-index: 9;
+  width:100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+
+  .appName{
+
+    color: $headers;
+    font-size: 60px;
+    justify-content:center;
+    align-text:center;
+
+    #numbertwo {
+      font-size: 20px;
+    }
+
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body,
+html {
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+.map {
+  width: 100%;
+  height: 50%;
+}
+
+.map-application {
+  height: 100%;
+  padding-top: 50px;
+}
+
+
+

@@ -4,12 +4,13 @@
 var gulp = require('gulp');
 var open = require('open');
 var wiredep = require('wiredep').stream;
+var sass = require('gulp-sass');
 
 // Load plugins
 var $ = require('gulp-load-plugins')();
 
 // Styles
-gulp.task('styles', function () {
+gulp.task('styles', ['sass'], function () {
     return gulp.src(['app/styles/main.css'])
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest('app/styles'))
@@ -96,6 +97,12 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest('app'));
 });
 
+gulp.task('sass', function() {
+  return gulp.src('scss/main.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('app/styles'));
+});
+
 // Watch
 gulp.task('watch', ['connect', 'serve'], function () {
     // Watch for changes in `app` folder
@@ -111,6 +118,9 @@ gulp.task('watch', ['connect', 'serve'], function () {
 
     // Watch .css files
     gulp.watch('app/styles/**/*.css', ['styles']);
+
+    //Watch .scss files
+    gulp.watch('scss/**/*.scss', ['sass']);
 
     // Watch .js files
     gulp.watch('app/scripts/**/*.js', ['scripts']);
