@@ -11,26 +11,26 @@
 
   L.Icon.Default.imagePath = 'images/';
 
-  $.getJSON('data/mock/test_annual_sea_levels.json')
+  $.getJSON('data/mock/annual_sea_levels.json')
     .done(function (dataset) {
       // Display the most recent year's sea levels
       var set = dataset.set[dataset.set.length - 1];
 
       set.data.forEach(function(load) {
-        var msl = load.MSL;
+        var msl = load.seaLevel;
         var className = 'gps_ring';
 
-        if (msl <= 5) {
+        if (msl <= 0.5) {
           className += ' wave1';
-        } else if (msl <= 20) {
+        } else if (msl <= 1.0) {
           className += ' wave2';
-        } else if (msl <= 40) {
+        } else if (msl <= 1.5) {
           className += ' wave3';
-        } else if (msl <= 60) {
+        } else if (msl <= 2.0) {
           className += ' wave4';
-        } else if (msl <= 80) {
+        } else if (msl <= 2.2) {
           className += ' wave5';
-        } else if (msl <= 100) {
+        } else {
           className += ' wave6';
         }
 
