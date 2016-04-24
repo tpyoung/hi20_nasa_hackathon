@@ -1,7 +1,7 @@
 /*jslint browser: true*/
 /*global L */
 
-(function (window, document, L, undefined) {
+(function (window, document, L) {
 	'use strict';
 
   var address = 'http://localhost:9000/coastal_view.html';
@@ -51,8 +51,7 @@
         .bindPopup('Location: ' + load.name + ' LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL)
         .addTo(map)
         .on('click', function(e) {
-          // TODO: Change 'Honolulu' to variable name
-          window.location.href = address + '?lat=' + load.lat + '&lon=' + load.lon + '&name=Honolulu';
+          window.location.href = address + '?lat=' + load.lat + '&lon=' + load.lon + '&name=' + load.name;
         });
       });
     });
@@ -71,10 +70,5 @@
     maxZoom: 18,
     attribution: 'Map data © <a href="http://www.openstreetmap.org">OpenStreetMap contributors</a>'
   }).addTo(map);
-
-  L.popup()
-  .setLatLng([21.5067, -157.8670])
-  .setContent("CLICK ON A PINGING BUBBLE FOR SOME INFO.")
-  .openOn(map);
 
 }(window, document, L));
