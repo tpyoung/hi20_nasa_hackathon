@@ -425,10 +425,16 @@
     ]
   };
 
+  // Returns a random integer between min (inclusive) and max (inclusive)
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   var formattedPoints = coords.map(function(point) {
     return {
       lat: point[1],
-      lon: point[0]
+      lon: point[0]//,
+      // MSL: getRandomInt(1, 100)
     };
   });
 
