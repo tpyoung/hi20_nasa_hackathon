@@ -21,15 +21,15 @@
         var msl = load.seaLevel;
         var className = 'gps_ring';
 
-        if (msl <= 0.5) {
+        if (msl <= 0.75) {
           className += ' wave1';
-        } else if (msl <= 1.0) {
+        } else if (msl <= 0.77) {
           className += ' wave2';
-        } else if (msl <= 1.5) {
+        } else if (msl <= 1.01) {
           className += ' wave3';
-        } else if (msl <= 2.0) {
+        } else if (msl <= 2.05) {
           className += ' wave4';
-        } else if (msl <= 2.2) {
+        } else if (msl <= 2.08) {
           className += ' wave5';
         } else {
           className += ' wave6';
