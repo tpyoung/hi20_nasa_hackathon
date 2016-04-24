@@ -1,7 +1,7 @@
 var data = {
   "metadata": {
-    "longitude": -157.70599365234,
-    "latitude": 21.253541873633,
+    "longitude": -157.705994,
+    "latitude": 21.253542,
     "name": "Hanauma Bay"
   },
   "data": [{ "x": 1950, "y": 1.866758452880196 },
