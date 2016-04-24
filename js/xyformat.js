@@ -2,8 +2,8 @@
 
 const annualSeaLevel = require('./../data/mock/annual_sea_levels.json').set;
 
-const lat = 21.588489047779;
-const lon = -158.12622070312;
+const lat = 21.449234144893;
+const lon = -158.20037841797;
 const xy = [];
 
 for (let i = 0; i < annualSeaLevel.length; i++) {
