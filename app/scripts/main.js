@@ -67,19 +67,9 @@
       });
     });
 
-  // var topoLayer = new L.TopoJSON();
-  // $.getJSON('data/topodata.json')
-  //   .done(addTopoData);
-
-  // function addTopoData(topoData){
-  //   topoLayer.addData(topoData);
-  //   topoLayer.addTo(map);
-  // }
-
   new L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
     minZoom: 0,
     maxZoom: 18,
-    // attribution: 'Map data © <a href="http://www.openstreetmap.org">OpenStreetMap contributors</a>'
   }).addTo(map);
 
 }(window, document, L));
