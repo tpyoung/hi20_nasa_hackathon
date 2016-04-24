@@ -2,7 +2,9 @@ $background: #3b3a36;
 $headers: #e9ece5;
 
 body{
-  background-color: $background;
+  background-image: url('/images/underwater.jpg');
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
 }
 
 header{
@@ -46,7 +48,6 @@ header{
 
 body,
 html {
-  font-family: Arial, sans-serif;
   height: 100%;
 }
 
@@ -64,13 +65,13 @@ html {
 
 }
 
-.gps_ring { 
+.gps_ring {
     border: 3px solid #000;
      -webkit-border-radius: 30px;
      height: 18px;
-     width: 18px;       
+     width: 18px;
     -webkit-animation: pulsate 2s ease-out;
-    -webkit-animation-iteration-count: infinite; 
+    -webkit-animation-iteration-count: infinite;
     /*opacity: 0.0*/
 }
 
