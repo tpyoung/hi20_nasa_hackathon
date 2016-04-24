@@ -6,8 +6,10 @@
 
   var address = 'http://localhost:9000/coastal_view.html';
   var map = L.map('map', {
-    center: [21.5067, -157.8670],
-    zoom: 10
+    center: [21.4767, -157.9970],
+    zoom: 10,
+    zoomControl: false,
+    scrollWheelZoom: false
   });
 
   L.Icon.Default.imagePath = 'images/';
