@@ -23,6 +23,27 @@ body {
 }
 
 
+#cityInfo{
+  z-index: 1;
+  position: absolute;
+  background-color: RGBA(37, 37, 37, .8);
+  color: RGBA(203, 209, 211, 1.00);
+  padding: 10px 20px 10px 15px;
+  margin-top: -50px;
+  border-bottom-right-radius: 10px;
+  animation: down-n-up 5s   normal ease-out;
+  -webkit-animation: down-n-up 5s   normal ease-out;
+}
+
+  #long{
+    font-size: 10px;
+  }
+
+  #lat{
+    font-size: 18px;
+    padding-bottom: 2px;
+  }
+
 #container {
   margin-top: 30%;
   height: 275px;
@@ -302,5 +323,20 @@ svg #fish6{
       visibility: hidden;
       opacity: 0.0;
       display: none;
+    }
+}
+
+@-webkit-keyframes down-n-up {
+    0% {
+        top:50px;
+    }
+    10% {
+        top:50px
+    }
+    95% {
+        top:50px;
+    }
+    100% {
+        top: 0px;
     }
 }
