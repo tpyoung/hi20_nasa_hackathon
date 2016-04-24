@@ -49,13 +49,52 @@ html {
   padding-top: 50px; }
 
 .gps_ring {
-  border: 3px solid #000;
+  background: aqua;
   -webkit-border-radius: 30px;
   height: 18px;
   width: 18px;
   -webkit-animation: pulsate 2s ease-out;
-  -webkit-animation-iteration-count: infinite;
-  /*opacity: 0.0*/ }
+  -webkit-animation-iteration-count: infinite; }
+  .gps_ring.wave1 {
+    background: #AFB2B7;
+    height: 18px;
+    width: 18px; }
+  .gps_ring.wave2 {
+    background: #919AA1;
+    height: 20px;
+    width: 20px; }
+  .gps_ring.wave3 {
+    background: #7D8494;
+    height: 22px;
+    width: 22px; }
+  .gps_ring.wave4 {
+    background: #717D95;
+    height: 24px;
+    width: 24px; }
+  .gps_ring.wave5 {
+    background: #687691;
+    height: 26px;
+    width: 26px; }
+  .gps_ring.wave6 {
+    background: #556179;
+    height: 28px;
+    width: 28px; }
+  .gps_ring.wave7 {
+    background: #434E62;
+    height: 30px;
+    width: 30px; }
+  .gps_ring.wave8 {
+    background: #303B4F;
+    height: 32px;
+    width: 32px; }
+  .gps_ring.wave9 {
+    background: #1A2131;
+    height: 34px;
+    width: 34px; }
+  .gps_ring.wave10 {
+    background: #151922;
+    height: 36px;
+    width: 36px; }
 
 @-webkit-keyframes pulsate {
   0% {
