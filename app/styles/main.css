@@ -12,13 +12,16 @@ header {
   -webkit-align-items: center;
   align-items: center; }
   header .appName {
-    color: #3b3a36;
-    font-size: 60px;
+    font-size: 88px;
+    color: rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 4px 6px #ffe9ae, 0 0 0 rgba(0, 0, 0, 0.1), 1px 4px 6px #ffe9ae;
+    margin: 0;
+    padding: 0;
     -webkit-justify-content: center;
     justify-content: center;
     align-text: center; }
     header .appName #numbertwo {
-      font-size: 20px; }
+      font-size: 40px; }
 
 *,
 *:before,
