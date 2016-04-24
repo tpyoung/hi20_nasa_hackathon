@@ -12,7 +12,7 @@
 
   L.Icon.Default.imagePath = 'images/';
 
-  $.getJSON('data/mock/annual_sea_levels.json')
+  $.getJSON('data/mock/filtered_annual_sea_levels.json')
     .done(function (dataset) {
       // Display the most recent year's sea levels
       var set = dataset.set[dataset.set.length - 1];
@@ -38,7 +38,7 @@
         return L.marker(
           [load.lat, load.lon],
           {
-            title: 'LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL,
+            title: 'Location: ' + load.name + ' LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + msl,
             opacity: 1,
             icon: L.divIcon({
               className: 'css-icon',
@@ -48,7 +48,7 @@
             })
           }
         )
-        .bindPopup('LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL)
+        .bindPopup('Location: ' + load.name + ' LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL)
         .addTo(map)
         .on('click', function(e) {
           // TODO: Change 'Honolulu' to variable name
