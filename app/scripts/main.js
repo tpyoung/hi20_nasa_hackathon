@@ -72,4 +72,9 @@
     maxZoom: 18,
   }).addTo(map);
 
+  L.popup()
+  .setLatLng([21.4767, -157.9970])
+  .setContent('<div class="custom-popup">Click on a location to view sea level changes</span>')
+  .openOn(map);
+
 }(window, document, L));
