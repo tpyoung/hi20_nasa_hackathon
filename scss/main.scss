@@ -1,12 +1,6 @@
 $background: #3b3a36;
 $headers: #e9ece5;
 
-body{
-  background-image: url('/images/underwater.jpg');
-  background-size: cover;
-  font-family: 'Roboto', sans-serif;
-}
-
 header{
   top: 0;
   left: 0;
@@ -46,9 +40,18 @@ header{
   clear: both;
 }
 
+#main{
+  height: 100%;
+}
+
 body,
 html {
   height: 100%;
+  background-image: url('/images/underwater.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
 }
 
 .map {
@@ -60,12 +63,6 @@ html {
   height: 100%;
   padding-top: 50px;
 }
-
-.css-icon {
-
-}
-
-
 
 // See http://www.zazzle.com/blue_and_gray_ocean_colored_palette_bathroom_scale-256516564283123221
 $wave1: #AFB2B7; // lightest gray
