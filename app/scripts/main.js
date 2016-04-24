@@ -11,47 +11,30 @@
 
   L.Icon.Default.imagePath = 'images/';
 
-  var msInterval = 5000;
-  var currYearIndex = 0;
-  var markers = [];
-
-  function handleSeaLevelsData(dataset) {
-
-    function addMarkers() {
-      var set = dataset.set[currYearIndex];
-
-      // Remove old markers
-      markers.forEach(function(item) {
-        map.removeLayer(item);
-      });
+  $.getJSON('data/mock/annual_sea_levels.json')
+    .done(function (dataset) {
+      // Display the most recent year's sea levels
+      var set = dataset.set[dataset.set.length - 1];
 
       set.data.forEach(function(load) {
-        var msl = load.MSL;
+        var msl = load.seaLevel;
         var className = 'gps_ring';
 
-        if (msl <= 10) {
+        if (msl <= 0.5) {
           className += ' wave1';
-        } else if (msl <= 20) {
+        } else if (msl <= 1.0) {
           className += ' wave2';
-        } else if (msl <= 30) {
+        } else if (msl <= 1.5) {
           className += ' wave3';
-        } else if (msl <= 40) {
+        } else if (msl <= 2.0) {
           className += ' wave4';
-        } else if (msl <= 50) {
+        } else if (msl <= 2.2) {
           className += ' wave5';
-        } else if (msl <= 60) {
+        } else {
           className += ' wave6';
-        } else if (msl <= 70) {
-          className += ' wave7';
-        } else if (msl <= 80) {
-          className += ' wave8';
-        } else if (msl <= 90) {
-          className += ' wave9';
-        } else if (msl <= 100) {
-          className += ' wave10';
         }
 
-        var markerToAdd = L.marker(
+        return L.marker(
           [load.lat, load.lon],
           {
             title: 'LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL,
@@ -63,28 +46,11 @@
               iconAnchor: [11, 11]
             })
           }
-        );
-        markers.push(markerToAdd);
-
-        markerToAdd
+        )
         .bindPopup('LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL)
         .addTo(map);
       });
-
-      currYearIndex++;
-
-      if (currYearIndex > 2009) {
-        currYearIndex = 0;
-      }
-
-      setTimeout(addMarkers, msInterval);
-    }
-
-    addMarkers();
-  }
-
-  $.getJSON('data/mock/test_annual_sea_levels.json')
-    .done(handleSeaLevelsData);
+    });
 
   // var topoLayer = new L.TopoJSON();
   // $.getJSON('data/topodata.json')
