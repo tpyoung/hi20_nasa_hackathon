@@ -33,13 +33,14 @@ header {
   clear: both; }
 
 #main {
-  margin-top: 8%;
+  padding-top: 50px;
   height: 100%;
-  background-color: rgba(233, 236, 229, 0.7); }
+  background-color: rgba(255, 233, 174, 0.85); }
 
 body,
 html {
   height: 100%;
+  background: url("/images/sand-text.jpg") repeat;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
