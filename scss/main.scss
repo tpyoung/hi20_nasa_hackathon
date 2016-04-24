@@ -107,41 +107,35 @@ html {
 }
 
 .gps_ring {
-  background: aqua;
+  background: $wave6;
   border-radius: 30px;
   height: 18px;
   width: 18px;
+  -webkit-animation: pulsate 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
   &.wave1 {
-    background: $wave1;
     height: 18px;
     width: 18px;
   }
   &.wave2 {
-    background: $wave2;
     height: 22px;
     width: 22px;
   }
   &.wave3 {
-    background: $wave3;
     height: 26px;
     width: 26px;
   }
   &.wave4 {
-    background: $wave4;
     height: 30px;
     width: 30px;
   }
   &.wave5 {
-    background: $wave5;
     height: 34px;
     width: 34px;
   }
   &.wave6 {
-    background: $wave6;
     height: 38px;
     width: 38px;
-    -webkit-animation: pulsate 2s ease-out;
-    -webkit-animation-iteration-count: infinite;
   }
 }
 
