@@ -8,29 +8,22 @@ $wave5: #F4A09C;
 $wave6: #E83A30;
 
 header {
-  top: 0;
-  left: 0;
-  height: 100px;
-  padding: 15px;
-  z-index: 9;
-  width:100%;
-  display: flex;
-  justify-content:center;
-  align-items: center;
+  text-align: center;
 
   .appName {
-    font-size: 88px;
+    font-size: 72px;
     color: rgba(0,0,0,.1);
-    text-shadow: 1px 4px 6px #ffe9ae, 0 0 0 rgba(0,0,0,.1), 1px 4px 6px #ffe9ae;
+    letter-spacing: 4px;
+    text-shadow: 1px 4px 6px #ffe9ae, 0 0 0 rgba(0,0,0,.2), 1px 4px 6px #ffe9ae;
     margin: 0;
     padding: 0;
-    justify-content: center;
-    align-text: center;
-    letter-spacing: 4px;
+  }
 
-    #numbertwo {
-      font-size: 40px;
-    }
+  .appSubheading {
+    font-size: 24px;
+    color: rgba(0,0,0,.1);
+    letter-spacing: 2px;
+    text-shadow: 1px 4px 6px #ffe9ae, 0 0 0 rgba(0,0,0,.2), 1px 4px 6px #ffe9ae;
   }
 }
 
