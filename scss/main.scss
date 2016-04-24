@@ -67,47 +67,16 @@ html {
 }
 
 .map {
-  width: 100%;
-  height: 69%;
+  width: 80%;
+  height: 80%;
   box-shadow: 10px 10px 5px grey;
+  margin: 0 auto;
+  border: 10px solid white;
 }
 
 .map-application {
   height: 100%;
   padding-top: 50px;
-}
-
-.scale {
-  &.wave1 {
-    background: $wave1;
-    height: 18px;
-    width: 18px;
-  }
-  &.wave2 {
-    background: $wave2;
-    height: 22px;
-    width: 22px;
-  }
-  &.wave3 {
-    background: $wave3;
-    height: 26px;
-    width: 26px;
-  }
-  &.wave4 {
-    background: $wave4;
-    height: 30px;
-    width: 30px;
-  }
-  &.wave5 {
-    background: $wave5;
-    height: 34px;
-    width: 34px;
-  }
-  &.wave6 {
-    background: $wave6;
-    height: 38px;
-    width: 38px;
-  }
 }
 
 .gps_ring {
