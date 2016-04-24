@@ -2,6 +2,7 @@
   "name": "HI2O",
   "version": "0.0.0",
   "devDependencies": {
+    "browser-sync": "^2.12.3",
     "gulp": "^3.6.2",
     "gulp-autoprefixer": "0.0.7",
     "gulp-clean": "^0.2.4",
@@ -18,6 +19,6 @@
     "wiredep": "^1.4.4"
   },
   "dependencies": {
-  	"leaflet": "~0.7.2"
+    "leaflet": "~0.7.2"
   }
 }

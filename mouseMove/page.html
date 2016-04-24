@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>MouseMove</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-      <div id="container">
-        <div id="water"></div>
-      </div>
 
-      <script src="./effect.js"></script>
-      <script src='http://activetheorylab.net/files/hydra.js'></script>
-      <script src='http://cdnjs.cloudflare.com/ajax/libs/pixi.js/1.5.1/pixi.js'></script>
-      <script type="text/javascript" src='./cordTracker.js'></script>
+<head>
+    <meta charset="UTF-8">
+    <title>MouseMove</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div id="eventContainer">
+        <div id="container">
+            <div id="water">
+                <div id="sand"></div>
+            </div>
+            <div id="ocean">
+            </div>
+        </div>
+        <div id="infoContainer">
+            <div id='info'>
+                <p>Mean Sea Level: <span id='mslText'> </span></p>
+                <p id='year'>Year: <span id='yearText'> </span></p>
+            </div>
+        </div>
+    </div>
+    <script src="../js/mouseTracker.js"></script>
+    <script type="text/javascript" src="../js/waves.js"></script>
 </body>
+
 </html>

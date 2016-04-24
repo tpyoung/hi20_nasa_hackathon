@@ -126,6 +126,9 @@ function getMousePos(div, evt) {
 
 var container = document.querySelector('#container')
 var water = document.querySelector('#water');
+var info = document.querySelector('#info');
+var mslText = document.querySelector('#mslText');
+var yearText = document.querySelector('#yearText');
 
 container.addEventListener('mousemove', function(evt) {
   var mousePos = getMousePos(container, evt);
@@ -142,9 +145,11 @@ container.addEventListener('mousemove', function(evt) {
   });
 
   var dataHeight = maximum - minimum;
-  console.log(dataHeight);
   var cellHeight = (data[cell].y - minimum)/ dataHeight * container.clientHeight;
   water.style.height = cellHeight + 'px';
+  info.style.height = (cellHeight + 149) + 'px';
+  mslText.innerHTML = (parseFloat(data[cell].y) * 12).toFixed(2) + ' in.';
+  yearText.innerHTML = data[cell].x;
 
 });
 
