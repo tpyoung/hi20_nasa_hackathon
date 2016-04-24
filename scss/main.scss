@@ -141,6 +141,20 @@ html {
   }
 }
 
+.custom-popup {
+  color: #FDF5E6;
+  // font-weight: bold;
+}
+
+.help-text {
+  align: top;
+  // background: #fff;
+  color: #8B6914;
+  font-size: 14px;
+  margin-top: 20px;
+  text-align: center;
+}
+
 @-webkit-keyframes pulsate {
   0% {
     -webkit-transform: scale(0.1, 0.1);

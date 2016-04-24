@@ -40,7 +40,7 @@
         return L.marker(
           [load.lat, load.lon],
           {
-            title: 'Location: ' + load.name + ' LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + msl,
+            title: 'LOCATION : ' + load.name + ' LAT : ' + load.lat + ' LNG : ' + load.lon + ' MSL : ' + msl,
             opacity: 1,
             icon: L.divIcon({
               className: 'css-icon',
@@ -50,7 +50,7 @@
             })
           }
         )
-        .bindPopup('Location: ' + load.name + ' LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.seaLevel)
+        .bindPopup('<div class="custom-popup">LOCATION : ' + load.name + '<br> LAT : ' + load.lat + '<br> LNG : ' + load.lon + '<br> MSL : ' + load.seaLevel + '</div>')
         .addTo(map)
         .on('click', function(e) {
           window.location.href = address + '?lat=' + load.lat + '&lon=' + load.lon + '&name=' + load.key;
