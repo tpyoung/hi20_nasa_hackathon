@@ -44,5 +44,10 @@
     maxZoom: 18,
     attribution: 'Map data © <a href="http://www.openstreetmap.org">OpenStreetMap contributors</a>'
   }).addTo(map);
+  
+  L.popup()
+  .setLatLng([21.5067, -157.8670])
+  .setContent("CLICK ON A PINGING BUBBLE FOR SOME INFO.")
+  .openOn(map);
 
 }(window, document, L));
