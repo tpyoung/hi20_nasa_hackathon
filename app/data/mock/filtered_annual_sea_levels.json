@@ -5,36 +5,42 @@
       "data": [
         {
           "name": "Honolulu",
-          "lat": "21.3067",
-          "lon": "-157.8670",
+          "key": "honolulu",
+          "lat": 21.3067,
+          "lon": -157.8670,
           "seaLevel": 0.7649166666666667
         },
         {
-          "name": "Mokuoloe",
-          "lat": "21.4331",
-          "lon": "-157.7900",
+          "name": "Kaneohe",
+          "key": "kaneohe",
+          "lat": 21.4331,
+          "lon": -157.7900,
           "seaLevel": 1.0088333333333332
         },
         {
           "name": "Wai'anae",
+          "key": "waianae",
           "lat": 21.449234144893,
           "lon": -158.20037841797,
           "seaLevel": 2.1658417976386843
         },
         {
           "name": "Hanauma Bay",
+          "key": "hanauma_bay",
           "lat": 21.253541873633,
           "lon": -157.70599365234,
           "seaLevel": 2.0750561958444305
         },
         {
           "name": "Laie",
+          "key": "laie",
           "lat": 21.63062243551,
           "lon": -157.91610717773,
           "seaLevel": 2.0457165637728756
         },
         {
           "name": "Haleiwa",
+          "key": "haleiwa",
           "lat": 21.588489047779,
           "lon": -158.12622070312,
           "seaLevel": 0.7425989007579628

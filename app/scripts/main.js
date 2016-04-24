@@ -51,7 +51,7 @@
         .bindPopup('Location: ' + load.name + ' LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL)
         .addTo(map)
         .on('click', function(e) {
-          window.location.href = address + '?lat=' + load.lat + '&lon=' + load.lon + '&name=' + load.name;
+          window.location.href = address + '?lat=' + load.lat + '&lon=' + load.lon + '&name=' + load.key;
         });
       });
     });
