@@ -1,16 +1,16 @@
 $background: #3b3a36;
-$headers: #e9ece5;
-
-body{
-  background-image: url('/images/underwater.jpg');
-  background-size: cover;
-  font-family: 'Roboto', sans-serif;
-}
+$headers: #3b3a36;
+$wave1: #D1FAD7;
+$wave2: #16C72E;
+$wave3: #fae596;
+$wave4: #EEE966;
+$wave5: #F4A09C;
+$wave6: #E83A30;
 
 header{
   top: 0;
   left: 0;
-  height: 150px;
+  height: 100px;
   padding: 15px;
   z-index: 9;
   width:100%;
@@ -46,14 +46,26 @@ header{
   clear: both;
 }
 
+#main{
+  margin-top: 8%;
+  height: 100%;
+  background-color: rgba(233, 236, 229, 0.7);
+}
+
 body,
 html {
   height: 100%;
+  // background-image: url('/images/underwater.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
 }
 
 .map {
   width: 100%;
   height: 69%;
+  box-shadow: 10px 10px 5px grey;
 }
 
 .map-application {
@@ -61,31 +73,7 @@ html {
   padding-top: 50px;
 }
 
-.css-icon {
-
-}
-
-
-
-// See http://www.zazzle.com/blue_and_gray_ocean_colored_palette_bathroom_scale-256516564283123221
-$wave1: #AFB2B7; // lightest gray
-$wave2: #919AA1;
-$wave3: #7D8494;
-$wave4: #717D95;
-$wave5: #687691;
-$wave6: #556179;
-$wave7: #434E62;
-$wave8: #303B4F;
-$wave9: #1A2131;
-$wave10: #151922; // darkest blue
-
-.gps_ring {
-  background: aqua;
-  -webkit-border-radius: 30px;
-  height: 18px;
-  width: 18px;
-  -webkit-animation: pulsate 2s ease-out;
-  -webkit-animation-iteration-count: infinite;
+.scale {
   &.wave1 {
     background: $wave1;
     height: 18px;
@@ -93,48 +81,67 @@ $wave10: #151922; // darkest blue
   }
   &.wave2 {
     background: $wave2;
-    height: 20px;
-    width: 20px;
-  }
-  &.wave3 {
-    background: $wave3;
     height: 22px;
     width: 22px;
   }
-  &.wave4 {
-    background: $wave4;
-    height: 24px;
-    width: 24px;
-  }
-  &.wave5 {
-    background: $wave5;
+  &.wave3 {
+    background: $wave3;
     height: 26px;
     width: 26px;
   }
-  &.wave6 {
-    background: $wave6;
-    height: 28px;
-    width: 28px;
-  }
-  &.wave7 {
-    background: $wave7;
+  &.wave4 {
+    background: $wave4;
     height: 30px;
     width: 30px;
   }
-  &.wave8 {
-    background: $wave8;
-    height: 32px;
-    width: 32px;
-  }
-  &.wave9 {
-    background: $wave9;
+  &.wave5 {
+    background: $wave5;
     height: 34px;
     width: 34px;
   }
-  &.wave10 {
-    background: $wave10;
-    height: 36px;
-    width: 36px;
+  &.wave6 {
+    background: $wave6;
+    height: 38px;
+    width: 38px;
+  }
+}
+
+.gps_ring {
+  background: aqua;
+  border-radius: 30px;
+  height: 18px;
+  width: 18px;
+  &.wave1 {
+    background: $wave1;
+    height: 18px;
+    width: 18px;
+  }
+  &.wave2 {
+    background: $wave2;
+    height: 22px;
+    width: 22px;
+  }
+  &.wave3 {
+    background: $wave3;
+    height: 26px;
+    width: 26px;
+  }
+  &.wave4 {
+    background: $wave4;
+    height: 30px;
+    width: 30px;
+  }
+  &.wave5 {
+    background: $wave5;
+    height: 34px;
+    width: 34px;
+  }
+  &.wave6 {
+    background: $wave6;
+    height: 38px;
+    width: 38px;
+    -webkit-animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: infinite;
   }
 }
 

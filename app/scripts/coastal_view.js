@@ -1,4 +1,6 @@
-var data = [ { "x": "1911", "y": 0.15591666666666668 },
+var city = 'Hololulu';
+var data = [
+  { "x": "1911", "y": 0.15591666666666668 },
   { "x": "1912", "y": 0.3294166666666667 },
   { "x": "1913", "y": 0.42475 },
   { "x": "1914", "y": 0.598 },
@@ -102,8 +104,7 @@ var data = [ { "x": "1911", "y": 0.15591666666666668 },
   { "x": "2012", "y": 0.8413333333333332 },
   { "x": "2013", "y": 0.8838333333333334 },
   { "x": "2014", "y": 0.9475833333333333 },
-  { "x": "2015", "y": 0.9415833333333333 },
-  { "x": "2016", "y": 0.248 } ];
+  { "x": "2015", "y": 0.9415833333333333 } ];
 
 function max(data, cb) {
   return data.map(cb).reduce(function(prev, curr) {
@@ -147,9 +148,7 @@ container.addEventListener('mousemove', function(evt) {
   var dataHeight = maximum - minimum;
   var cellHeight = (data[cell].y - minimum)/ dataHeight * container.clientHeight;
   water.style.height = cellHeight + 'px';
-  info.style.height = (cellHeight + 149) + 'px';
+  info.style.height = (cellHeight + 142) + 'px';
   mslText.innerHTML = (parseFloat(data[cell].y) * 12).toFixed(2) + ' in.';
   yearText.innerHTML = data[cell].x;
-
 });
-
