@@ -13,7 +13,7 @@
 
   $.getJSON('data/topodata.json')
     .done(addTopoData);
-    
+
   /* create leaflet map */
   var map = L.map('map', {
     center: [21.5067, -157.8670],
@@ -34,7 +34,7 @@
 
   function addMarkers(dataset){
     dataset.set[0].data
-    .map(function(load){
+    .forEach(function(load){
       return L.marker([load.lat,load.lon], { title: 'LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL, opacity: 0.5 })
       .bindPopup('LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL)
       .addTo(map);
