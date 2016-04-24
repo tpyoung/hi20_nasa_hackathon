@@ -77,7 +77,8 @@ html {
     width: 38px; }
 
 .custom-popup {
-  color: #FDF5E6; }
+  color: #FDF5E6;
+  letter-spacing: 0.8px; }
 
 .help-text {
   align: top;
