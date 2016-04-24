@@ -420,11 +420,20 @@
 
 	L.Icon.Default.imagePath = 'images/';
 
-	/* create leaflet map */
-	var map = L.map('map', {
-		center: [21.5067, -157.8670],
-		zoom: 10
-	});
+  var topoLayer = new L.TopoJSON();
+
+  $.getJSON('topodata.json')
+    .done(addTopoData);
+  /* create leaflet map */
+  var map = L.map('map', {
+    center: [21.5067, -157.8670],
+    zoom: 10
+  });
+
+  function addTopoData(topoData){  
+    topoLayer.addData(topoData);
+    topoLayer.addTo(map);
+  }
   /* add default stamen tile layer */
   new L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
     minZoom: 0,
@@ -434,7 +443,8 @@
 
   MOCK_DATA.features[0].geometry.coordinates
   .map(function(x){
-    return L.marker([x[1],x[0]], { title: 'LAT: ' + x[1] + ' LNG: ' + x[0], opacity: 0.5 }).bindPopup('LAT: ' + x[1] + ' LNG: ' + x[0]).addTo(map);
+    return L.marker([x[1],x[0]], { title: 'LAT: ' + x[1] + ' LNG: ' + x[0], opacity: 0.5 })
+    .bindPopup('LAT: ' + x[1] + ' LNG: ' + x[0])
+    .addTo(map);
   });
-
 }(window, document, L));
