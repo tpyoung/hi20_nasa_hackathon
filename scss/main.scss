@@ -7,7 +7,7 @@ $wave4: #EEE966;
 $wave5: #F4A09C;
 $wave6: #E83A30;
 
-header{
+header {
   top: 0;
   left: 0;
   height: 100px;
@@ -18,17 +18,19 @@ header{
   justify-content:center;
   align-items: center;
 
-  .appName{
-
-    color: $headers;
-    font-size: 60px;
-    justify-content:center;
-    align-text:center;
+  .appName {
+    font-size: 88px;
+    color: rgba(0,0,0,.1);
+    text-shadow: 1px 4px 6px #ffe9ae, 0 0 0 rgba(0,0,0,.1), 1px 4px 6px #ffe9ae;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-text: center;
+    letter-spacing: 4px;
 
     #numbertwo {
-      font-size: 20px;
+      font-size: 40px;
     }
-
   }
 }
 
@@ -47,15 +49,17 @@ header{
 }
 
 #main{
-  margin-top: 8%;
+  padding-top: 50px;
   height: 100%;
-  background-color: rgba(233, 236, 229, 0.7);
+  // background-color: rgba(233, 236, 229, 0.7);
+  background-color: rgba(255 ,233, 174, .85);
 }
 
 body,
 html {
   height: 100%;
   // background-image: url('/images/underwater.jpg');
+  background: url('/images/sand-text.jpg') repeat;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -63,9 +67,11 @@ html {
 }
 
 .map {
-  width: 100%;
-  height: 69%;
+  width: 80%;
+  height: 80%;
   box-shadow: 10px 10px 5px grey;
+  margin: 0 auto;
+  border: 10px solid white;
 }
 
 .map-application {
@@ -73,75 +79,36 @@ html {
   padding-top: 50px;
 }
 
-.scale {
-  &.wave1 {
-    background: $wave1;
-    height: 18px;
-    width: 18px;
-  }
-  &.wave2 {
-    background: $wave2;
-    height: 22px;
-    width: 22px;
-  }
-  &.wave3 {
-    background: $wave3;
-    height: 26px;
-    width: 26px;
-  }
-  &.wave4 {
-    background: $wave4;
-    height: 30px;
-    width: 30px;
-  }
-  &.wave5 {
-    background: $wave5;
-    height: 34px;
-    width: 34px;
-  }
-  &.wave6 {
-    background: $wave6;
-    height: 38px;
-    width: 38px;
-  }
-}
-
 .gps_ring {
-  background: aqua;
+  background: $wave6;
   border-radius: 30px;
   height: 18px;
   width: 18px;
+  -webkit-animation: pulsate 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
   &.wave1 {
-    background: $wave1;
     height: 18px;
     width: 18px;
   }
   &.wave2 {
-    background: $wave2;
     height: 22px;
     width: 22px;
   }
   &.wave3 {
-    background: $wave3;
     height: 26px;
     width: 26px;
   }
   &.wave4 {
-    background: $wave4;
     height: 30px;
     width: 30px;
   }
   &.wave5 {
-    background: $wave5;
     height: 34px;
     width: 34px;
   }
   &.wave6 {
-    background: $wave6;
     height: 38px;
     width: 38px;
-    -webkit-animation: pulsate 2s ease-out;
-    -webkit-animation-iteration-count: infinite;
   }
 }
 

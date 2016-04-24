@@ -1,17 +1,20 @@
 /*jslint browser: true*/
 /*global L */
 
-(function (window, document, L, undefined) {
+(function (window, document, L) {
 	'use strict';
 
+  var address = 'http://localhost:9000/coastal_view.html';
   var map = L.map('map', {
-    center: [21.5067, -157.8670],
-    zoom: 10
+    center: [21.4767, -157.9970],
+    zoom: 10,
+    zoomControl: false,
+    scrollWheelZoom: false
   });
 
   L.Icon.Default.imagePath = 'images/';
 
-  $.getJSON('data/mock/annual_sea_levels.json')
+  $.getJSON('data/mock/filtered_annual_sea_levels.json')
     .done(function (dataset) {
       // Display the most recent year's sea levels
       var set = dataset.set[dataset.set.length - 1];
@@ -20,15 +23,15 @@
         var msl = load.seaLevel;
         var className = 'gps_ring';
 
-        if (msl <= 0.5) {
+        if (msl <= 0.75) {
           className += ' wave1';
-        } else if (msl <= 1.0) {
+        } else if (msl <= 0.77) {
           className += ' wave2';
-        } else if (msl <= 1.5) {
+        } else if (msl <= 1.01) {
           className += ' wave3';
-        } else if (msl <= 2.0) {
+        } else if (msl <= 2.05) {
           className += ' wave4';
-        } else if (msl <= 2.2) {
+        } else if (msl <= 2.08) {
           className += ' wave5';
         } else {
           className += ' wave6';
@@ -37,7 +40,7 @@
         return L.marker(
           [load.lat, load.lon],
           {
-            title: 'LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL,
+            title: 'Location: ' + load.name + ' LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + msl,
             opacity: 1,
             icon: L.divIcon({
               className: 'css-icon',
@@ -47,8 +50,17 @@
             })
           }
         )
-        .bindPopup('LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL)
-        .addTo(map);
+        .bindPopup('Location: ' + load.name + ' LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.seaLevel)
+        .addTo(map)
+        .on('click', function(e) {
+          window.location.href = address + '?lat=' + load.lat + '&lon=' + load.lon + '&name=' + load.key;
+        })
+        .on('mouseover', function(e) {
+          this.togglePopup();
+        })
+        .on('mouseout', function(e) {
+          this.closePopup();
+        });
       });
     });
 
@@ -66,10 +78,5 @@
     maxZoom: 18,
     attribution: 'Map data © <a href="http://www.openstreetmap.org">OpenStreetMap contributors</a>'
   }).addTo(map);
-
-  L.popup()
-  .setLatLng([21.5067, -157.8670])
-  .setContent("CLICK ON A PINGING BUBBLE FOR SOME INFO.")
-  .openOn(map);
 
 }(window, document, L));
