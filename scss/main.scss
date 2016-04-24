@@ -2,7 +2,9 @@ $background: #3b3a36;
 $headers: #e9ece5;
 
 body{
-  background-color: $background;
+  background-image: url('/images/underwater.jpg');
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
 }
 
 header{
@@ -46,7 +48,6 @@ header{
 
 body,
 html {
-  font-family: Arial, sans-serif;
   height: 100%;
 }
 
@@ -64,19 +65,90 @@ html {
 
 }
 
-.gps_ring { 
-    border: 3px solid #000;
-     -webkit-border-radius: 30px;
-     height: 18px;
-     width: 18px;       
-    -webkit-animation: pulsate 2s ease-out;
-    -webkit-animation-iteration-count: infinite; 
-    /*opacity: 0.0*/
+
+
+// See http://www.zazzle.com/blue_and_gray_ocean_colored_palette_bathroom_scale-256516564283123221
+$wave1: #AFB2B7; // lightest gray
+$wave2: #919AA1;
+$wave3: #7D8494;
+$wave4: #717D95;
+$wave5: #687691;
+$wave6: #556179;
+$wave7: #434E62;
+$wave8: #303B4F;
+$wave9: #1A2131;
+$wave10: #151922; // darkest blue
+
+.gps_ring {
+  background: aqua;
+  -webkit-border-radius: 30px;
+  height: 18px;
+  width: 18px;
+  -webkit-animation: pulsate 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  &.wave1 {
+    background: $wave1;
+    height: 18px;
+    width: 18px;
+  }
+  &.wave2 {
+    background: $wave2;
+    height: 20px;
+    width: 20px;
+  }
+  &.wave3 {
+    background: $wave3;
+    height: 22px;
+    width: 22px;
+  }
+  &.wave4 {
+    background: $wave4;
+    height: 24px;
+    width: 24px;
+  }
+  &.wave5 {
+    background: $wave5;
+    height: 26px;
+    width: 26px;
+  }
+  &.wave6 {
+    background: $wave6;
+    height: 28px;
+    width: 28px;
+  }
+  &.wave7 {
+    background: $wave7;
+    height: 30px;
+    width: 30px;
+  }
+  &.wave8 {
+    background: $wave8;
+    height: 32px;
+    width: 32px;
+  }
+  &.wave9 {
+    background: $wave9;
+    height: 34px;
+    width: 34px;
+  }
+  &.wave10 {
+    background: $wave10;
+    height: 36px;
+    width: 36px;
+  }
 }
 
 @-webkit-keyframes pulsate {
-        0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-        50% {opacity: 1.0;}
-        100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+  0% {
+    -webkit-transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    -webkit-transform: scale(1.2, 1.2);
+    opacity: 0.0;
+  }
 }
 

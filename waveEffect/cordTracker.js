@@ -105,51 +105,53 @@ var data = [ { "x": "1911", "y": 0.15591666666666668 },
   { "x": "2015", "y": 0.9415833333333333 },
   { "x": "2016", "y": 0.248 } ];
 
-function max(data, cb) {
-  return data.map(cb).reduce(function(prev, curr) {
-    return curr > prev ? curr : prev;
-  })
-}
 
-function min(data, cb) {
-  return data.map(cb).reduce(function(prev, curr) {
-    return curr < prev ? curr : prev;
-  })
-}
-
-function getMousePos(div, evt) {
+function getMousePos(canvas, evt) {
+  var rect = canvas.getBoundingClientRect();
   return {
-    x: evt.pageX - div.offsetLeft,
-    y: evt.pageY - div.offsetTop
-  }
+    x: evt.clientX - rect.left,
+    y: evt.clientY - rect.top
+  };
 }
-
+// var canvas = document.getElementById('myCanvas');
+// var context = canvas.getContext('2d');
 var container = document.querySelector('#container')
 var water = document.querySelector('#water');
-var info = document.querySelector('#info');
-var mslText = document.querySelector('#mslText');
-var yearText = document.querySelector('#yearText');
-
 container.addEventListener('mousemove', function(evt) {
-  var mousePos = getMousePos(container, evt);
+  // var mousePos = getMousePos(canvas, evt);
+  // console.log('DATA LENGTH: ', data.length);
+  // console.log('CELL WIDTH: ', canvas.width / data.length);
+  // var cellWidth = canvas.width / data.length;
+  // console.log("POSITION: ", Math.floor(mousePos.x / cellWidth));
+  // var cell = Math.floor(mousePos.x / cellWidth);
+  // console.log('SEA LEVEL: ', data[cell].y);
 
+  // water.height = (data[cell].y) * canvas.height;
+  // console.log('WATER HEIGHT: ', water.height);
+
+
+  // console.log('WIDTH', container.clientWidth);
+  // console.log('LENGTH', data.length)
   var cellWidth = container.clientWidth / data.length;
-  var cell = Math.floor(mousePos.x / cellWidth);
+  var cell = Math.floor(evt.pageX / cellWidth);
+  // console.log(cell);
+  // console.log('SEA LEVEL', data[cell].y);
+  var cellHeight = container.clientHeight/ data.length;
+  water.style.height = (data[cell].y * container.clientHeight) + 'px';
 
-  var minimum = min(data, function(d) {
-    return d.y
-  });
+}, false);
 
-  var maximum = max(data, function(d) {
-    return d.y
-  });
+// var arrayLength = 100;
+// var heightArray = [];
+// var createdDivHeights = [];
+// var hv = document.getElementsByClassName('heightValueClass');
 
-  var dataHeight = maximum - minimum;
-  var cellHeight = (data[cell].y - minimum)/ dataHeight * container.clientHeight;
-  water.style.height = cellHeight + 'px';
-  info.style.height = (cellHeight + 149) + 'px';
-  mslText.innerHTML = (parseFloat(data[cell].y) * 12).toFixed(2) + ' in.';
-  yearText.innerHTML = data[cell].x;
-
-});
+// (function boxMaker() {
+//     var waterMaker = document.createElement('div');
+//     waterMaker.className = 'water';
+//     divHeight = ((Math.random() * 100) * 6);
+//     heightValue.style.height = divHeight + 'px';
+//   parseInt(water.style.height);
+//   }
+// })();
 
