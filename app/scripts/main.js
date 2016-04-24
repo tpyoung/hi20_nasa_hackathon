@@ -44,8 +44,8 @@
             icon: L.divIcon({
               className: 'css-icon',
               html: '<div class="' + className + '"></div>',
-              iconSize: [75, 75],
-              iconAnchor: [11, 11]
+              iconSize: [30, 30],
+              iconAnchor: [0, 0]
             })
           }
         )
@@ -59,7 +59,7 @@
           window.location.href = address + '?lat=' + load.lat + '&lon=' + load.lon + '&name=' + load.key;
         })
         .on('mouseover', function(e) {
-          this.togglePopup();
+          this.openPopup();
         })
         .on('mouseout', function(e) {
           this.closePopup();
