@@ -45,7 +45,7 @@
   function addMarkers(dataset){
     dataset.set[0].data
     .forEach(function(load){
-      return L.marker([load.lat,load.lon], { title: 'LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL, opacity: 0.5, icon: cssIcon })
+      return L.marker([load.lat,load.lon], { title: 'LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL, opacity: 1, icon: cssIcon })
       .bindPopup('LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL)
       .addTo(map);
     });
