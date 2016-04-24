@@ -4,6 +4,7 @@
 (function (window, document, L, undefined) {
 	'use strict';
 
+  var address = 'http://localhost:9000/coastal_view.html';
   var map = L.map('map', {
     center: [21.5067, -157.8670],
     zoom: 10
@@ -48,7 +49,11 @@
           }
         )
         .bindPopup('LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL)
-        .addTo(map);
+        .addTo(map)
+        .on('click', function(e) {
+          // TODO: Change 'Honolulu' to variable name
+          window.location.href = address + '?lat=' + load.lat + '&lon=' + load.lon + '&name=Honolulu';
+        });
       });
     });
 
