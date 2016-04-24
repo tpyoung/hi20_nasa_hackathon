@@ -12,6 +12,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
+
 }
 
 
@@ -83,17 +84,18 @@ body{
   height:20%;
   width:10px;
   position:absolute;
-  -webkit-animation-name: waveMotion;
-  -webkit-animation-duration: 5s;
-  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name:             dostuff;
+  -webkit-animation-duration:         5s;
+  -webkit-animation-iteration-count:  infinite;
   -webkit-transition-timing-function: ease-in-out;
 }
+
 
 #eventContainer {
   display: flex;
   flex-flow: row no-wrap;
   width: 1000px;
-  height: 700px;
+  height: 900px;
   align-items: flex-end;
   background-color: #a8e3ff;
   margin-left: 10%;
@@ -113,7 +115,7 @@ body{
 }
 
 
-@-webkit-keyframes waveMotion{
+@-webkit-keyframes dostuff{
   0%{
     height:60%;
   }
@@ -124,8 +126,6 @@ body{
     height:60%;
   }
 }
-<<<<<<< HEAD
-=======
 
 
 #fishtank {
@@ -258,4 +258,3 @@ svg #fish6{
 }
 
 /*END Fish Animation*/
->>>>>>> 35720cf08b4cffb4a89d0615141896a4f61f5847
