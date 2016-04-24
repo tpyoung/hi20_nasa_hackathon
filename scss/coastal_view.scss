@@ -1,18 +1,7 @@
-body {
-  background-color: RGBA(43, 44, 44, 1.00);
-  font-family: 'Roboto';
-}
-
-
-#container {
-  margin-top: 30%;
-  height: 275px;
-  width: 1000px;
-  background-color: rgba(255,255,255, 0.0);
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-end;
-
+#eventContainer {
+  background-color: #a8e3ff;
+  // background-color: RGBA(43, 44, 44, 1.00);
+  margin-left: 10%;
 }
 
 #sun {
@@ -68,10 +57,7 @@ width: 0;
 
 }
 
-body{
-  height:auto;
-  margin:0;
-}
+
 
 #ocean{
   position:relative;
@@ -99,16 +85,7 @@ body{
 }
 
 
-#eventContainer {
-  display: flex;
-  flex-flow: row no-wrap;
-  width: 1000px;
-  height: 900px;
-  align-items: flex-end;
-  background-color: #a8e3ff;
-  margin-left: 10%;
 
-}
 
 #info {
   margin-left: 10px;

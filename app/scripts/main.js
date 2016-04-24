@@ -48,7 +48,12 @@
           }
         )
         .bindPopup('LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.MSL)
-        .addTo(map);
+        .addTo(map)
+        .on('click', function(evt) {
+          console.log('evt.target', evt.target);
+          // document.getElementById('map').className = ''
+          // $('#map').hide();
+        });
       });
     });
 
