@@ -105,20 +105,46 @@ var data = [ { "x": "1911", "y": 0.15591666666666668 },
   { "x": "2015", "y": 0.9415833333333333 },
   { "x": "2016", "y": 0.248 } ];
 
-function getMousePos(canvas, evt) {
-  var rect = canvas.getBoundingClientRect();
-  return {
-    x: evt.clientX - rect.left,
-    y: evt.clientY - rect.top
-  };
+function max(data, cb) {
+  return data.map(cb).reduce(function(prev, curr) {
+    return curr > prev ? curr : prev;
+  })
 }
-var canvas = document.getElementById('myCanvas');
-var context = canvas.getContext('2d');
 
-canvas.addEventListener('mousemove', function(evt) {
-  var mousePos = getMousePos(canvas, evt);
+function min(data, cb) {
+  return data.map(cb).reduce(function(prev, curr) {
+    return curr < prev ? curr : prev;
+  })
+}
 
-  var cellWidth = canvas.width / data.length;
+function getMousePos(div, evt) {
+  return {
+    x: evt.pageX - div.offsetLeft,
+    y: evt.pageY - div.offsetTop
+  }
+}
+
+var container = document.querySelector('#container')
+var water = document.querySelector('#water');
+
+container.addEventListener('mousemove', function(evt) {
+  var mousePos = getMousePos(container, evt);
+
+  var cellWidth = container.clientWidth / data.length;
   var cell = Math.floor(mousePos.x / cellWidth);
 
-}, false);
+  var minimum = min(data, function(d) {
+    return d.y
+  });
+
+  var maximum = max(data, function(d) {
+    return d.y
+  });
+
+  var dataHeight = maximum - minimum;
+  console.log(dataHeight);
+  var cellHeight = (data[cell].y - minimum)/ dataHeight * container.clientHeight;
+  water.style.height = cellHeight + 'px';
+
+});
+
