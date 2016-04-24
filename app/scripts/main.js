@@ -44,7 +44,7 @@
             icon: L.divIcon({
               className: 'css-icon',
               html: '<div class="' + className + '"></div>',
-              iconSize: [50, 50],
+              iconSize: [75, 75],
               iconAnchor: [11, 11]
             })
           }
