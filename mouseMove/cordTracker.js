@@ -1,5 +1,4 @@
-[{ "x": "1910", "y": 0},
-{ "x": "1911", "y": 0.15591666666666668 },
+var data = [ { "x": "1911", "y": 0.15591666666666668 },
   { "x": "1912", "y": 0.3294166666666667 },
   { "x": "1913", "y": 0.42475 },
   { "x": "1914", "y": 0.598 },
@@ -104,4 +103,55 @@
   { "x": "2013", "y": 0.8838333333333334 },
   { "x": "2014", "y": 0.9475833333333333 },
   { "x": "2015", "y": 0.9415833333333333 },
-  { "x": "2016", "y": 0 } ]
+  { "x": "2016", "y": 0.248 } ];
+
+
+function getMousePos(canvas, evt) {
+  var rect = canvas.getBoundingClientRect();
+  return {
+    x: evt.clientX - rect.left,
+    y: evt.clientY - rect.top
+  };
+}
+// var canvas = document.getElementById('myCanvas');
+// var context = canvas.getContext('2d');
+var container = document.querySelector('#container')
+var water = document.querySelector('#water');
+container.addEventListener('mousemove', function(evt) {
+  // var mousePos = getMousePos(canvas, evt);
+  // console.log('DATA LENGTH: ', data.length);
+  // console.log('CELL WIDTH: ', canvas.width / data.length);
+  // var cellWidth = canvas.width / data.length;
+  // console.log("POSITION: ", Math.floor(mousePos.x / cellWidth));
+  // var cell = Math.floor(mousePos.x / cellWidth);
+  // console.log('SEA LEVEL: ', data[cell].y);
+
+  // water.height = (data[cell].y) * canvas.height;
+  // console.log('WATER HEIGHT: ', water.height);
+
+
+  // console.log('WIDTH', container.clientWidth);
+  // console.log('LENGTH', data.length)
+  var cellWidth = container.clientWidth / data.length;
+  var cell = Math.floor(evt.pageX / cellWidth);
+  // console.log(cell);
+  // console.log('SEA LEVEL', data[cell].y);
+  var cellHeight = container.clientHeight/ data.length;
+  water.style.height = (data[cell].y * container.clientHeight) + 'px';
+
+}, false);
+
+// var arrayLength = 100;
+// var heightArray = [];
+// var createdDivHeights = [];
+// var hv = document.getElementsByClassName('heightValueClass');
+
+// (function boxMaker() {
+//     var waterMaker = document.createElement('div');
+//     waterMaker.className = 'water';
+//     divHeight = ((Math.random() * 100) * 6);
+//     heightValue.style.height = divHeight + 'px';
+//   parseInt(water.style.height);
+//   }
+// })();
+
