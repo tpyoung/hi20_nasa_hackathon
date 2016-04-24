@@ -40,7 +40,6 @@
         return L.marker(
           [load.lat, load.lon],
           {
-            title: 'Location: ' + load.name + ' LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + msl,
             opacity: 1,
             icon: L.divIcon({
               className: 'css-icon',
@@ -50,7 +49,11 @@
             })
           }
         )
-        .bindPopup('Location: ' + load.name + ' LAT: ' + load.lat + ' LNG: ' + load.lon + ' MSL: ' + load.seaLevel)
+        .bindPopup('<div class="custom-popup"><span class="popup-key">LOCATION:&nbsp;&nbsp;</span>'
+          + load.name + '<br><span class="popup-key">LAT:&nbsp;&nbsp;</span>'
+          + load.lat + '<br><span class="popup-key">LNG:&nbsp;&nbsp;</span>'
+          + load.lon + '<br><span class="popup-key">MSL:&nbsp;&nbsp;</span>'
+          + load.seaLevel + '</div>')
         .addTo(map)
         .on('click', function(e) {
           window.location.href = address + '?lat=' + load.lat + '&lon=' + load.lon + '&name=' + load.key;
@@ -64,19 +67,14 @@
       });
     });
 
-  // var topoLayer = new L.TopoJSON();
-  // $.getJSON('data/topodata.json')
-  //   .done(addTopoData);
-
-  // function addTopoData(topoData){
-  //   topoLayer.addData(topoData);
-  //   topoLayer.addTo(map);
-  // }
-
   new L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
     minZoom: 0,
     maxZoom: 18,
-    attribution: 'Map data © <a href="http://www.openstreetmap.org">OpenStreetMap contributors</a>'
   }).addTo(map);
+
+  L.popup()
+  .setLatLng([21.4767, -157.9970])
+  .setContent('<div class="custom-popup">Click on a location to view sea level changes</span>')
+  .openOn(map);
 
 }(window, document, L));
