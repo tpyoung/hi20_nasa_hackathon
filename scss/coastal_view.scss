@@ -15,6 +15,33 @@ body {
 
 }
 
+#cityInfo{
+  z-index: 1;
+  position: absolute;
+  width: 125px;
+  background-color: RGBA(37, 37, 37, .0);
+  color: white;
+  padding: 10px 0 10px 15px;
+  margin-left: 80%;
+  border-bottom-left-radius: 10px;
+  animation: in-n-out 5s   normal ease-out;
+  -webkit-animation: in-n-out 5s   normal ease-out;
+  right: 0px;
+}
+
+#name{
+  font-size: 20px;
+}
+
+#long{
+  font-size: 18px;
+}
+
+#lat{
+  font-size: 18px;
+  padding-bottom: 2px;
+}
+
 #sun {
  height: 60px;
  width: 60px;
@@ -134,6 +161,8 @@ body{
     height:60%;
   }
 }
+
+
 
 
 #fishtank {
